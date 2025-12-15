@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ExerciseItem extends StatelessWidget {
   final String index;
@@ -84,7 +85,7 @@ class ExerciseItem extends StatelessWidget {
                       children: [
                         Text(
                           progress,
-                          style: const TextStyle(
+                          style: GoogleFonts.inter(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
@@ -106,7 +107,7 @@ class ExerciseItem extends StatelessWidget {
                               ),
                               Text(
                                 improvement,
-                                style: const TextStyle(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   color: Color.fromARGB(255, 75, 77, 75),
                                   fontWeight: FontWeight.w500,

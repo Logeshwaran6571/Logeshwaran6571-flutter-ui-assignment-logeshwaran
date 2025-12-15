@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WorkoutStatsCard extends StatelessWidget {
   const WorkoutStatsCard({super.key});
@@ -48,9 +49,9 @@ class HeaderRow extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        const Text(
+        Text(
           "1:29:59",
-          style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+          style: GoogleFonts.inter(fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -66,16 +67,54 @@ class MetricsRow extends StatelessWidget {
       children: [
         const Text("VO₂", style: TextStyle(fontSize: 14)),
         const SizedBox(width: 4),
-        const Text(
+        Text(
           "29",
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+          style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.w600),
+        ),
+        const Spacer(),
+        SizedBox(
+          width: 50,
+          height: 30,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 5,
+                height: 5,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color.fromARGB(255, 196, 217, 223),
+                ),
+              ),
+
+              SizedBox(width: 3),
+              Container(
+                width: 15,
+                height: 6,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(width: 3),
+              Container(
+                width: 5,
+                height: 5,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color.fromARGB(255, 196, 217, 223),
+                ),
+              ),
+            ],
+          ),
         ),
         const Spacer(),
         Image.asset("assets/icons/heart (1).png", width: 30, height: 30),
         const SizedBox(width: 4),
-        const Text(
+        Text(
           "98",
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+          style: GoogleFonts.inter(fontSize: 22, fontWeight: FontWeight.w600),
         ),
       ],
     );

@@ -1,17 +1,15 @@
-## Day 5 – Icon Updates & UI Design Improvements
+## Day 6 – Typography & Code Structure Improvements
 
 ## What Was Done
 
-- Created an assets/ directory to centralize static resources.
+- Updated the application to use the correct and consistent font family across all text elements.
 
-- Added an icons/ subfolder inside assets/ to manage all icon files.
+- Refactored deeply nested UI code into well-structured, reusable widget files.
 
-- Replaced mismatched icons with appropriate ones based on the UI requirements.
-
-- Ensured icon usage is consistent across the interface.
+- Improved overall project structure by separating concerns instead of dumping everything into a single file.
 
 ## What I Learned
 
-- How to properly import and use icons within the codebase.
+- How to import, configure, and apply custom font families correctly within the project.
 
-- How to create custom icons and integrate them into a project.
+- How restructuring widgets improves code readability, maintainability, and makes future changes significantly easier and safer.

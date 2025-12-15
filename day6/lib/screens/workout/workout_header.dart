@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../widgets/mini_bar_chart.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WorkoutHeader extends StatelessWidget {
   const WorkoutHeader({super.key});
@@ -44,14 +45,14 @@ class WorkoutInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children: [
         Text(
           "Workout",
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
         ),
         Text(
           "90 min",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.w400),
+          style: GoogleFonts.inter(fontSize: 35, fontWeight: FontWeight.w500),
         ),
       ],
     );

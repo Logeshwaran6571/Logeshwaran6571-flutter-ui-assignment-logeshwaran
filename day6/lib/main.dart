@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/workout/workout_screen.dart';
 
 void main() {
-  runApp(const WorkoutApp());
+  runApp(WorkoutApp());
 }
 
 class WorkoutApp extends StatelessWidget {
