@@ -14,7 +14,7 @@ class WorkoutStatsCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(34),
       ),
       child: Column(
-        children: const [
+        children: [
           HeaderRow(),
           MultiRing(),
           MetricsRow(),

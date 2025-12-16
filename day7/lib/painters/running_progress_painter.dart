@@ -81,32 +81,26 @@ class RunningProgressPainter extends CustomPainter {
 
     // Gradient arc
 
-    final greenArcPaint = Paint()
+    final gradientPaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = outerStroke
-      ..color = ProgressColors.green;
+      ..shader = SweepGradient(
+        startAngle: degToRad(0),
+        endAngle: degToRad(120),
+        colors: [
+          ProgressColors.green,
+          ProgressColors.orange,
+          ProgressColors.green,
+        ],
+      ).createShader(Rect.fromCircle(center: center, radius: outerRadius));
 
     canvas.drawArc(
-      outerRect,
-      degToRad(345), // start
-      degToRad(55), // green length
+      Rect.fromCircle(center: center, radius: outerRadius),
+      degToRad(345),
+      degToRad(80),
       false,
-      greenArcPaint,
-    );
-
-    final orangeArcPaint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = outerStroke
-      ..color = ProgressColors.orange;
-
-    canvas.drawArc(
-      outerRect,
-      degToRad(30), // overlaps slightly
-      degToRad(35), // short orange tail
-      false,
-      orangeArcPaint,
+      gradientPaint,
     );
 
     // Inactive grey arc

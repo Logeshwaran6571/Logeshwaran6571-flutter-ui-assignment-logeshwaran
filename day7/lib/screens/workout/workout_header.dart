@@ -7,7 +7,7 @@ class WorkoutHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.fromLTRB(3, 18, 18, 18),
       child: Row(
         children: const [
