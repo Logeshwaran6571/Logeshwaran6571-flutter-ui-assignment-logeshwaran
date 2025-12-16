@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/workout/workout_screen.dart';
 
 void main() {
-  runApp(WorkoutApp());
+  runApp(const WorkoutApp());
 }
 
 class WorkoutApp extends StatelessWidget {
@@ -10,7 +10,7 @@ class WorkoutApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: WorkoutScreen(),
     );

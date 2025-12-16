@@ -1,9 +1,11 @@
-import 'package:day7/painters/running_progress_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../painters/running_progress_painter.dart';
 
 class MultiRing extends StatelessWidget {
-  const MultiRing({super.key});
+  final bool showRunIcon;
+
+  const MultiRing({super.key, required this.showRunIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +18,18 @@ class MultiRing extends StatelessWidget {
             size: const Size.square(240),
             painter: RunningProgressPainter(),
           ),
-
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                  color: Colors.black,
-                  shape: BoxShape.circle,
+              if (showRunIcon)
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset("assets/icons/run.png", width: 33),
                 ),
-                child: Image.asset("assets/icons/run.png", width: 33),
-              ),
               const SizedBox(height: 4),
               const Text(
                 "Running",

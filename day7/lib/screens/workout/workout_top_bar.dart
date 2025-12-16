@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class WorkoutTopBar extends StatelessWidget {
-  const WorkoutTopBar({super.key});
+  final VoidCallback onEditPressed;
+
+  const WorkoutTopBar({super.key, required this.onEditPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -9,14 +11,17 @@ class WorkoutTopBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [BackButton(), ActionButtons()],
+        children: [
+          const BackButtonWidget(),
+          ActionButtons(onEditPressed: onEditPressed),
+        ],
       ),
     );
   }
 }
 
-class BackButton extends StatelessWidget {
-  const BackButton({super.key});
+class BackButtonWidget extends StatelessWidget {
+  const BackButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +31,19 @@ class BackButton extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(50),
       ),
-      child: Image.asset("assets/icons/arrow-left.png", width: 42, height: 42),
+      child: Image.asset(
+        "assets/icons/arrow-left.png",
+        width: 42,
+        height: 42,
+      ),
     );
   }
 }
 
 class ActionButtons extends StatelessWidget {
-  const ActionButtons({super.key});
+  final VoidCallback onEditPressed;
+
+  const ActionButtons({super.key, required this.onEditPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +57,16 @@ class ActionButtons extends StatelessWidget {
         children: [
           Image.asset("assets/icons/star.png", width: 20, height: 20),
           const SizedBox(width: 10),
-          Image.asset("assets/icons/edit1.png", width: 40, height: 40),
+
+          GestureDetector(
+            onTap: onEditPressed,
+            child: Image.asset(
+              "assets/icons/edit1.png",
+              width: 40,
+              height: 40,
+            ),
+          ),
+
           const SizedBox(width: 10),
           const Icon(Icons.more_horiz, size: 25),
         ],
